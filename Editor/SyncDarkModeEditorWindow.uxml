@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
+>
+    <Style src="project://database/Packages/com.tools.sync-dark-mode/Editor/SyncDarkModeEditorWindow.uss?fileID=7433441132597879392&amp;guid=c1f0cad901965ca4ca79552832e10e43&amp;type=3#SyncDarkModeEditorWindow" />
+    <engine:VisualElement name="VisualElement" class="container" style="align-self: center; width: 400px; height: 300px; max-width: 400px; max-height: 300px;">
+        <engine:Label tabindex="-1" text="START" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 24px; margin-bottom: 30px;" />
+        <engine:VisualElement name="custom-toggle" class="custom-toggle" style="transition-property: background-color; transition-duration: 0.2s; transition-timing-function: ease; transition-delay: 0s; align-items: center; justify-content: flex-start; align-self: center;">
+            <engine:VisualElement name="toggle-slider" class="toggle-slider" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

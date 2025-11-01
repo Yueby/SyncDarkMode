@@ -1,5 +1,5 @@
 {
-    "name": "com.template.package.Runtime",
+    "name": "com.yueby.sync-dark-mode.Runtime",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
@@ -11,4 +11,4 @@
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
-} 
+}

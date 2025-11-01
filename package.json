@@ -1,20 +1,21 @@
 {
-  "name": "com.template.package",
-  "displayName": "Template Package",
-  "version": "1.0.0",
+  "name": "com.tools.sync-dark-mode",
+  "displayName": "\u25c6 Sync Dark Mode",
+  "version": "0.0.1",
   "unity": "2022.3",
-  "description": "A template package for Unity package development",
+  "description": "An unity extension for sync window dark mode.",
   "author": {
-    "name": "Your Name",
-    "email": "you@email.com"
+    "name": "Yueby",
+    "email": "yueby_sp@qq.com"
   },
   "keywords": [
-    "unity",
-    "package",
-    "template",
-    "development"
+    "sync",
+    "dark mode",
+    "yueby",
+    "tools",
+    "sync dark mode",
+    "mode"
   ],
   "unityRelease": "22f1",
-  "vpmDependencies": {
-  }
-} 
+  "vpmDependencies": {}
+}

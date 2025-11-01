@@ -1,5 +1,5 @@
 {
-    "name": "com.template.package.Editor",
+    "name": "com.yueby.sync-dark-mode.Editor",
     "rootNamespace": "",
     "references": [
         "com.template.package.Runtime"
@@ -15,4 +15,4 @@
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
-} 
+}

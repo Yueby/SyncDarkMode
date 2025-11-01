@@ -1,0 +1,58 @@
+.title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-toggle {
+    width: 56px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: rgb(128, 128, 128);
+    cursor: pointer;
+    position: relative;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.custom-toggle:active {
+    background-color: rgb(100, 100, 100);
+}
+
+.custom-toggle.on {
+    background-color: rgb(68, 138, 255);
+}
+
+.custom-toggle.on:active {
+    background-color: rgb(50, 110, 220);
+}
+
+.toggle-slider {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: white;
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    transition-property: left;
+    transition-duration: 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-toggle.on .toggle-slider {
+    left: 27px;
+}
+
+.custom-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

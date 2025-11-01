@@ -1,141 +1,47 @@
-# Unity Package Template
+# SyncDarkMode
 
-A professional template for creating Unity packages with standardized structure and workflows.
+自动同步 Windows 系统主题到 Unity Editor 的深色/浅色主题工具。
 
-## Features
+## 功能特性
 
-- 📁 Standard Unity Package Layout
-- 🔄 Automated GitHub Release Workflow
-- 📦 Complete Package Configuration
-- 🛠 Pre-configured Assembly Definitions
-- 📝 Comprehensive Documentation Structure
+- 🔄 **自动同步**: 监听 Windows 系统主题变化，自动同步到 Unity Editor
+- ⚙️ **可控制**: 通过编辑器窗口随时启用/禁用同步功能
+- 🚀 **即时响应**: Windows 主题改变时立即同步 Unity Editor 主题
+- 📦 **轻量级**: 仅包含必要的代码，无冗余依赖
 
-## Directory Structure
+## 安装
 
-```
-com.template.package/
-├── Runtime/             # Runtime code
-├── Editor/              # Editor-specific code
-├── Documentation~/      # Package documentation
-├── .github/            # GitHub configurations
-│   └── workflows/      # GitHub Actions
-├── package.json        # Package manifest
-├── README.md           # Package documentation
-├── CHANGELOG.md        # Version history
-└── LICENSE            # MIT license
-```
+### 通过 Unity Package Manager
 
-## Quick Start
+1. 打开 Unity Editor
+2. 在 Package Manager 中点击 "+" 按钮
+3. 选择 "Add package from git URL"
+4. 输入 Git 仓库地址
 
-### Creating Your Package
+### 手动安装
 
-1. Click "Use this template" to create a new repository
-2. Clone your new repository
-3. Open the project in Unity
+1. 克隆或下载仓库
+2. 在 Package Manager 中点击 "Add package from disk"
+3. 选择包文件夹
 
-### Package Configuration
+## 使用方法
 
-1. Update `package.json`:
-   ```json
-   {
-     "name": "com.company.package-name",    // Unique package identifier
-     "displayName": "Package Display Name", // Name in Package Manager
-     "version": "1.0.0",                   // Semantic versioning
-     "unity": "2022.3",                    // Minimum Unity version
-     "description": "Package description",  // Brief description
-     "author": {
-       "name": "Your Name",
-       "email": "your.email@example.com"
-     }
-   }
-   ```
+### 启用同步
 
-2. Configure Assembly Definitions:
-   - Runtime: `Runtime/com.company.package-name.Runtime.asmdef`
-   - Editor: `Editor/com.company.package-name.Editor.asmdef`
+1. 在 Unity Editor 菜单栏选择 `Tools > YuebyTools > SyncDarkMode`
+2. 在打开的窗口中点击开关，启用自动同步功能
 
-### GitHub Setup
+### 工作原理
 
-1. Configure repository settings:
-   - Navigate to Settings > Secrets and variables > Actions
-   - Add variable: `PACKAGE_NAME` = `com.company.package-name`
+- 监听 Windows 注册表中的主题设置
+- 当 Windows 主题改变时，自动调用 Unity 内部 API 切换 Editor 主题
+- 使用 `InternalEditorUtility.SwitchSkinAndRepaintAllViews()` 实现主题切换
 
-2. Configure PAT for workflow triggers:
-   - Create a Personal Access Token (PAT):
-     1. Go to GitHub Settings > Developer settings > Personal access tokens
-     2. Select "Tokens (classic)"
-     3. Click "Generate new token (classic)"
-     4. Set description and expiration (90 days recommended)
-     5. Select only the `workflow` permission
-   
-   - Add PAT secret:
-     1. Go to repository Settings > Secrets and variables > Actions
-     2. Add new secret named `PAT`
-     3. Value format (JSON):
-     ```json
-     {
-       "token": "your_pat_token",
-       "targets": [
-         {
-           "repo": "target-repo-name",
-           "workflow": "workflow-file.yml"
-         }
-       ]
-     }
-     ```
+## 系统要求
 
-3. Available GitHub Actions:
-   - **Release Workflow** (`release.yml`)
-     - Automatically creates Unity package and GitHub release
-     - Generates release from CHANGELOG.md
-     - Creates both .unitypackage and .zip formats
-     - Can trigger other repository workflows after release
-     - Triggered manually from Actions tab
+- Unity 2022.3 或更高版本
+- Windows 操作系统
 
-   - **Cleanup Workflow** (`cleanup.yml`)
-     - Helps manage repository releases and tags
-     - Can remove all releases and tags when needed
-     - Useful for development and maintenance
-     - Triggered manually from Actions tab
+## 许可证
 
-### Development Workflow
-
-1. **Code Organization**
-   - Runtime code → `Runtime/`
-   - Editor tools → `Editor/`
-
-2. **Documentation**
-   - API documentation → `Documentation~/`
-   - Update README.md
-   - Maintain CHANGELOG.md
-
-3. **Release Process**
-   - Update version in package.json
-   - Update CHANGELOG.md with new version
-   - Run Release workflow from GitHub Actions
-   - Automated package and release creation
-   - Automatically triggers configured workflows in other repositories
-
-## Installation Methods
-
-### Via Unity Package Manager
-
-1. Open Package Manager window
-2. Click "+" button
-3. Select "Add package from git URL"
-4. Enter: `https://github.com/Yueby/Template-Package.git`
-
-### Manual Installation
-
-1. Clone repository
-2. In Package Manager, click "Add package from disk"
-3. Select the package folder
-
-## Requirements
-
-- Unity 2022.3.22f1 or higher
-- Git
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+MIT License
