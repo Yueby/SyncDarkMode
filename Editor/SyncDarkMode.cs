@@ -21,6 +21,7 @@ namespace Yueby
             }
 
             WindowsThemeWatcher.OnThemeChanged += OnWindowsThemeChanged;
+            AssemblyReloadEvents.beforeAssemblyReload += () => WindowsThemeWatcher.OnThemeChanged -= OnWindowsThemeChanged;
             if (IsEnabled())
             {
                 SyncEditorTheme();
@@ -64,4 +65,3 @@ namespace Yueby
         }
     }
 }
-

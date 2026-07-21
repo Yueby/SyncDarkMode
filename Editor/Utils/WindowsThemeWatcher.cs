@@ -21,6 +21,7 @@ namespace Yueby
             {
                 m_LastIsDarkMode = IsWindowsDarkMode();
                 EditorApplication.update += CheckWindowsTheme;
+                AssemblyReloadEvents.beforeAssemblyReload += () => EditorApplication.update -= CheckWindowsTheme;
             }
         }
 
@@ -68,4 +69,3 @@ namespace Yueby
         }
     }
 }
-
